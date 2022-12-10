@@ -1,5 +1,20 @@
 # Getting Started with Create React App
 
+
+
+# https://b612-inventory-store.web.app (Client Side)
+
+# https://ema-john-simple-server-module-59.vercel.app/ (Server Side)
+
+# PI Inventory Store Project 
+ #  Techonology Used This Inventory Assigment  is 
+ 1. React Js ---Font End 
+ 2. Node JS ,Express JS , MongoDB, Security Provider Firebase and JWT Token
+ 3. JWT Token Which is the used Server to Client Commucation Security Provide .JWT One Kind of digital Singtanute
+ 4. Font end Desing ----> tailwindcss CSS, Daisyui and Etc
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
