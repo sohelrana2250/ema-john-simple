@@ -10,21 +10,33 @@ import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
 import Shipping from './components/Shipping/Shipping';
 import PrivateRoute from './routes/PrivateRoute';
+import UserContext from './contexts/UserContext';
+
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
+import Addproduct from './components/AddProduct/Addproduct';
+import ProductTable from './components/AllProduct/ProductTable';
+import UpdateProduct from './components/UpdateProduct/UpdateProduct';
+
+
+const queryClient = new QueryClient()
 
 
 function App() {
   const router = createBrowserRouter([
     {
-      path:'/',
+      path: '/',
       element: <Main></Main>,
       children: [
         {
           path: '/',
-          loader: () => fetch('products.json'),
+          // loader: () => fetch('http://localhost:5006/products'),
           element: <Shop></Shop>
         },
         {
-          path:'orders',
+          path: '/orders',
           loader: productsAndCartLoader,
           element: <Orders></Orders>
         },
@@ -37,24 +49,46 @@ function App() {
           element: <PrivateRoute><Shipping></Shipping></PrivateRoute>
         },
         {
-          path:'about',
-          element:<About></About>
+          path: 'about',
+          element: <About></About>
         },
         {
-          path: 'login',
+          path: '/login',
           element: <Login></Login>
         },
         {
-          path: 'signup',
+          path: '/signup',
           element: <SignUp></SignUp>
+        },
+        {
+          path: '/addproduct',
+          element: <Addproduct></Addproduct>
+        },
+        {
+          path: '/allproduct',
+          element: <ProductTable></ProductTable>
+        },
+        {
+          path: '/updateproduct/:id',
+          element: <UpdateProduct></UpdateProduct>,
+          loader: (props) => fetch(`https://ema-john-simple-server-module-59.vercel.app/allproducts/${props.params.id}`)
         }
       ]
     },
-    
+
   ])
   return (
     <div>
-      <RouterProvider router={router}></RouterProvider>
+
+      <QueryClientProvider client={queryClient}>
+
+        <UserContext>
+          <RouterProvider router={router}></RouterProvider>
+
+        </UserContext>
+
+      </QueryClientProvider>
+
     </div>
   );
 }

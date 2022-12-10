@@ -1,12 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/UserContext';
 import './Login.css';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
-    const location = useLocation(); 
+    const location = useLocation();
+    const [LogiInerror, setError] = useState('');
+    const [login, setLogin] = useState(false);
     const from = location.state?.from?.pathname || '/'
 
     const handleSubmit = event => {
@@ -21,14 +24,20 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
-                navigate(from, {replace: true})
+                setLogin(true);
+                setError('');
+
+                navigate(from, { replace: true })
             })
-            .catch(error => console.error(error));
+            .catch(error => {
+                setError(error.message);
+
+            });
     }
 
     return (
         <div className='form-container'>
-            <h2 className='form-title'>Login</h2>
+            <h2 className='form-title'> <button className='btn btn-outline btn-primary text-2xl mt-7'>Login Form</button></h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-control">
                     <label htmlFor="email">Email</label>
@@ -38,10 +47,22 @@ const Login = () => {
                     <label htmlFor="password">Password</label>
                     <input type="password" name="password" required />
                 </div>
-                <input className='btn-submit' type="submit" value="Login" />
+                <input onClick={toast.success('Successfully-Login')
+                } className='btn-submit' type="submit" value="Login" />
+                <Toaster />
             </form>
-            <p>New to ema john <Link to='/signup'>Create a New Account</Link></p>
+            <p>New to ema john <Link to='/signup' className='text-red-600 font-bold text-xl'>Create a New Account</Link></p>
+            <div>
+                {
+                    login && <p className='text-3xl text-danger text-center'>Successfully Login</p>
+                }
+                {LogiInerror && <p className='text-3xl text-center text-red-600'>{LogiInerror}</p>}
+            </div>
+
         </div>
+
+
+
     );
 };
 

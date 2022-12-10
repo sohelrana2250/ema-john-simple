@@ -1,11 +1,13 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/UserContext';
 import './SignUp.css';
 
 const SignUp = () => {
     const [error, setError] = useState(null);
     const { createUser } = useContext(AuthContext);
+    const [register, setRegister] = useState(false);
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -29,14 +31,18 @@ const SignUp = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
+                setRegister(true);
+                navigate('/');
             })
-            .catch(error => console.error(error));
+            .catch(error => {
+                setError(error.message);
+            });
 
     }
 
     return (
         <div className='form-container'>
-            <h2 className='form-title'>Sign Up</h2>
+            <h2 className='form-title pt-7'> <button className="btn btn-outline btn-error font-bold text-2xl">Sign Up Form</button>  </h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-control">
                     <label htmlFor="email">Email</label>
@@ -52,8 +58,13 @@ const SignUp = () => {
                 </div>
                 <input className='btn-submit' type="submit" value="Sign Up" />
             </form>
-            <p>Already Have an Account <Link to='/login'>Login</Link></p>
-            <p className='text-error'>{error}</p>
+            <p>Already Have an Account <Link to='/login' className='text-red-600 font-bold text-xl'>Login</Link></p>
+            <div>
+                {
+                    register && <p className='text-3xl text-danger text-center'>Successfully Register</p>
+                }
+                {error && <p className='text-3xl text-center text-red-600'>{error}</p>}
+            </div>
         </div>
     );
 };

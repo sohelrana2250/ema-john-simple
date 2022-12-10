@@ -1,0 +1,171 @@
+[debug] [2022-12-10T07:29:34.107Z] ----------------------------------------------------------------------
+[debug] [2022-12-10T07:29:34.118Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-12-10T07:29:34.119Z] CLI Version:   11.15.0
+[debug] [2022-12-10T07:29:34.120Z] Platform:      win32
+[debug] [2022-12-10T07:29:34.120Z] Node Version:  v16.13.2
+[debug] [2022-12-10T07:29:34.154Z] Time:          Sat Dec 10 2022 13:29:34 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-12-10T07:29:34.155Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-10T07:29:34.174Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2022-12-10T07:29:34.646Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-10T07:29:34.648Z] > authorizing via signed-in user (rana16-468@diu.edu.bd)
+[debug] [2022-12-10T07:29:34.649Z] [iam] checking project ema-john-simple-a7a92 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-12-10T07:29:34.655Z] > refreshing access token with scopes: []
+[debug] [2022-12-10T07:29:34.660Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-12-10T07:29:34.661Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-10T07:29:35.139Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-12-10T07:29:35.141Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-10T07:29:35.165Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ema-john-simple-a7a92:testIamPermissions [none]
+[debug] [2022-12-10T07:29:35.166Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ema-john-simple-a7a92:testIamPermissions x-goog-quota-user=projects/ema-john-simple-a7a92
+[debug] [2022-12-10T07:29:35.167Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ema-john-simple-a7a92:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-10T07:29:35.458Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2022-12-10T07:29:35.458Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2022-12-10T07:29:36.943Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ema-john-simple-a7a92:testIamPermissions 200
+[debug] [2022-12-10T07:29:36.944Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ema-john-simple-a7a92:testIamPermissions {}
+[debug] [2022-12-10T07:29:36.944Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project ema-john-simple-a7a92:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2022-12-10T07:29:36.948Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ema-john-simple-a7a92 [none]
+[debug] [2022-12-10T07:29:37.623Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ema-john-simple-a7a92 403
+[debug] [2022-12-10T07:29:37.625Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ema-john-simple-a7a92 {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2022-12-10T07:29:37.639Z] HTTP Error: 403, The caller does not have permission
+[debug] [2022-12-10T07:29:37.951Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project ema-john-simple-a7a92. Please make sure the project exists and your account has permission to access it.
+[debug] [2022-12-10T07:34:57.467Z] ----------------------------------------------------------------------
+[debug] [2022-12-10T07:34:57.473Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-12-10T07:34:57.475Z] CLI Version:   11.15.0
+[debug] [2022-12-10T07:34:57.476Z] Platform:      win32
+[debug] [2022-12-10T07:34:57.476Z] Node Version:  v16.13.2
+[debug] [2022-12-10T07:34:57.480Z] Time:          Sat Dec 10 2022 13:34:57 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-12-10T07:34:57.481Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-10T07:34:57.801Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-10T07:34:57.803Z] > authorizing via signed-in user (rana16-468@diu.edu.bd)
+[debug] [2022-12-10T07:34:57.803Z] [iam] checking project ema-john-simple-a7a92 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-12-10T07:34:57.812Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ema-john-simple-a7a92:testIamPermissions [none]
+[debug] [2022-12-10T07:34:57.813Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ema-john-simple-a7a92:testIamPermissions x-goog-quota-user=projects/ema-john-simple-a7a92
+[debug] [2022-12-10T07:34:57.813Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ema-john-simple-a7a92:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-10T07:35:01.757Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ema-john-simple-a7a92:testIamPermissions 200
+[debug] [2022-12-10T07:35:01.758Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ema-john-simple-a7a92:testIamPermissions {}
+[debug] [2022-12-10T07:35:01.760Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project ema-john-simple-a7a92:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2022-12-10T07:35:01.764Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ema-john-simple-a7a92 [none]
+[debug] [2022-12-10T07:35:02.889Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ema-john-simple-a7a92 403
+[debug] [2022-12-10T07:35:02.891Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ema-john-simple-a7a92 {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2022-12-10T07:35:02.899Z] HTTP Error: 403, The caller does not have permission
+[debug] [2022-12-10T07:35:03.346Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project ema-john-simple-a7a92. Please make sure the project exists and your account has permission to access it.
+[debug] [2022-12-10T07:36:18.925Z] ----------------------------------------------------------------------
+[debug] [2022-12-10T07:36:18.933Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-12-10T07:36:18.935Z] CLI Version:   11.15.0
+[debug] [2022-12-10T07:36:18.935Z] Platform:      win32
+[debug] [2022-12-10T07:36:18.936Z] Node Version:  v16.13.2
+[debug] [2022-12-10T07:36:18.939Z] Time:          Sat Dec 10 2022 13:36:18 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-12-10T07:36:18.940Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-10T07:36:19.266Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-10T07:36:19.268Z] > authorizing via signed-in user (rana16-468@diu.edu.bd)
+[debug] [2022-12-10T07:36:19.268Z] [iam] checking project ema-john-simple-a7a92 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-12-10T07:36:19.277Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ema-john-simple-a7a92:testIamPermissions [none]
+[debug] [2022-12-10T07:36:19.278Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ema-john-simple-a7a92:testIamPermissions x-goog-quota-user=projects/ema-john-simple-a7a92
+[debug] [2022-12-10T07:36:19.278Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ema-john-simple-a7a92:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-10T07:36:21.570Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ema-john-simple-a7a92:testIamPermissions 200
+[debug] [2022-12-10T07:36:21.571Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ema-john-simple-a7a92:testIamPermissions {}
+[debug] [2022-12-10T07:36:21.572Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project ema-john-simple-a7a92:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2022-12-10T07:36:21.577Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ema-john-simple-a7a92 [none]
+[debug] [2022-12-10T07:36:22.970Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ema-john-simple-a7a92 403
+[debug] [2022-12-10T07:36:22.972Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ema-john-simple-a7a92 {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2022-12-10T07:36:22.977Z] HTTP Error: 403, The caller does not have permission
+[debug] [2022-12-10T07:36:23.404Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project ema-john-simple-a7a92. Please make sure the project exists and your account has permission to access it.
+[debug] [2022-12-10T07:48:07.980Z] ----------------------------------------------------------------------
+[debug] [2022-12-10T07:48:07.988Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-12-10T07:48:07.989Z] CLI Version:   11.15.0
+[debug] [2022-12-10T07:48:07.990Z] Platform:      win32
+[debug] [2022-12-10T07:48:07.991Z] Node Version:  v16.13.2
+[debug] [2022-12-10T07:48:08.006Z] Time:          Sat Dec 10 2022 13:48:07 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-12-10T07:48:08.007Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-10T07:48:08.343Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-10T07:48:08.345Z] > authorizing via signed-in user (rana16-468@diu.edu.bd)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  F:\PROGRAMMING-HERO-REACT\ema-john-simple-with-auth-module-59
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2022-12-10T07:48:57.741Z] Using project from CLI flag: ema-john-simple-a7a92
+[debug] [2022-12-10T07:48:57.758Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ema-john-simple-a7a92 [none]
+[debug] [2022-12-10T07:48:58.973Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ema-john-simple-a7a92 403
+[debug] [2022-12-10T07:48:58.974Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ema-john-simple-a7a92 {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2022-12-10T07:48:58.976Z] HTTP Error: 403, The caller does not have permission
+[debug] [2022-12-10T07:48:59.477Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project ema-john-simple-a7a92. Please make sure the project exists and your account has permission to access it.
+[debug] [2022-12-10T07:53:00.751Z] ----------------------------------------------------------------------
+[debug] [2022-12-10T07:53:00.758Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-12-10T07:53:00.760Z] CLI Version:   11.15.0
+[debug] [2022-12-10T07:53:00.761Z] Platform:      win32
+[debug] [2022-12-10T07:53:00.761Z] Node Version:  v16.13.2
+[debug] [2022-12-10T07:53:00.765Z] Time:          Sat Dec 10 2022 13:53:00 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-12-10T07:53:00.766Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-10T07:53:01.115Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-10T07:53:01.117Z] > authorizing via signed-in user (rana16-468@diu.edu.bd)
+[debug] [2022-12-10T07:53:01.118Z] [iam] checking project ema-john-simple-a7a92 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-12-10T07:53:01.127Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ema-john-simple-a7a92:testIamPermissions [none]
+[debug] [2022-12-10T07:53:01.128Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ema-john-simple-a7a92:testIamPermissions x-goog-quota-user=projects/ema-john-simple-a7a92
+[debug] [2022-12-10T07:53:01.128Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ema-john-simple-a7a92:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-10T07:53:04.140Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ema-john-simple-a7a92:testIamPermissions 200
+[debug] [2022-12-10T07:53:04.141Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ema-john-simple-a7a92:testIamPermissions {}
+[debug] [2022-12-10T07:53:04.143Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project ema-john-simple-a7a92:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2022-12-10T07:53:04.147Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ema-john-simple-a7a92 [none]
+[debug] [2022-12-10T07:53:05.497Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ema-john-simple-a7a92 403
+[debug] [2022-12-10T07:53:05.497Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ema-john-simple-a7a92 {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2022-12-10T07:53:05.500Z] HTTP Error: 403, The caller does not have permission
+[debug] [2022-12-10T07:53:05.964Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project ema-john-simple-a7a92. Please make sure the project exists and your account has permission to access it.
