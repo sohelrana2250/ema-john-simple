@@ -46,6 +46,8 @@ const Addproduct = () => {
                     quantity
                 }
 
+                console.log(product);
+
                 addproductDatabase(product);
             }
         }).catch((error) => {
@@ -68,7 +70,7 @@ const Addproduct = () => {
 
 
                 if (data.acknowledged) {
-                    alert('Successfuly Added Doctors Info');
+                    alert('Successfuly Added Inventory Info');
 
                 }
             }).catch((error) => {
